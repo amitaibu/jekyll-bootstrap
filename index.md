@@ -4,6 +4,7 @@ title: 'Hello Dekyll'
 
 ---
 
+
 {% include JB/setup %}
 
 Welcome to Dekyll 0.1!
