@@ -1,39 +1,26 @@
 ---
-sync_map:
-    image_style:
-        - field_images
-    entity_reference:
-        - field_product_color
-identifier: 'commerce_product:2'
-page: true
-parents:
-    - 'node:3'
-children:
-    - 'taxonomy_term:5'
 file_path: products/galina/galina-white/index.html
-jekyll_name: field_product
-file_names:
-    - products/galina/galina-white/index.html
 entity_id: 'commerce_product:2'
+layout: product_page
+field_product:
+    - 'commerce_product:1'
+    - 'commerce_product:2'
+title: 'Galina - White'
+body:
+    value: 'Info about the black dress'
+    summary: ''
+    format: full_html
+    safe_value: "<p>Info about the black dress</p>\n"
+    safe_summary: ''
+permalink: galina
 images:
     -
         large: /products/galina/galina-white/images/large-galina-white.jpg
         medium: /products/galina/galina-white/images/medium-galina-white.jpg
         thumbnail: /products/galina/galina-white/images/thumbnail-galina-white.jpg
-title: 'Galina - White'
 field_product_color:
     -
-        sync_map:
-            image:
-                - field_product_color_image
-        identifier: 'taxonomy_term:5'
-        page: false
-        parents:
-            - 'node:3'
-            - 'commerce_product:2'
-        children: {  }
         file_path: null
-        jekyll_name: field_product_color
         image: /products/galina/galina-white/images/white.jpg
         entity_id: 'taxonomy_term:5'
         title: White
