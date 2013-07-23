@@ -1,0 +1,32 @@
+<div class="page-header">
+  <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
+</div>
+
+<div class="row-fluid">
+  <div class="span8">
+    <!-- Variant images -->
+    <ul>
+      {% for image in page.images %}
+      <li><img src="{{ image.thumbnail }}" /></li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="span4">
+    <!-- Other variants -->
+    <h3>Other colors</h3>
+    <ul>
+      {% for product in page.field_product %}
+        {% if product != page.entity_id %}
+          {% for sub_page in site.pages %}
+            {% if sub_page.entity_id == product %}
+              {{ sub_page.permalink }}
+              <li><a href="{{BASE_PATH}}{{sub_page.permalink}}">{{ sub_page.title }}</a></li>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endfor %}
+    </ul>
+
+    {{ content }}
+  </div>
+</div>
