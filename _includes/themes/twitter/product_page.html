@@ -7,7 +7,7 @@
     <!-- Variant images -->
     <ul>
       {% for image in page.images %}
-      <li><img src="{{ image.thumbnail }}" /></li>
+      <li><img src="{{BASE_PATH}}{{ image.thumbnail }}" /></li>
       {% endfor %}
     </ul>
   </div>
