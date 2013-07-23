@@ -1,17 +1,20 @@
 ---
+sync_map:
+    image_style:
+        - field_images
+    entity_reference:
+        - field_product_color
+identifier: 'commerce_product:1'
+page: true
+parents:
+    - 'node:3'
+children:
+    - 'taxonomy_term:1'
+file_path: products/galina/galina-black/index.html
+jekyll_name: field_product
+file_names:
+    - products/galina/galina-black/index.html
 entity_id: 'commerce_product:1'
-layout: product_page
-field_product:
-    - 'commerce_product:1'
-    - 'commerce_product:2'
-title: 'Galina - Black'
-body:
-    value: 'Info about the black dress'
-    summary: ''
-    format: full_html
-    safe_value: "<p>Info about the black dress</p>\n"
-    safe_summary: ''
-permalink: galina
 images:
     -
         large: /products/galina/galina-black/images/large-galina-black1.jpg
@@ -21,8 +24,20 @@ images:
         large: /products/galina/galina-black/images/large-galina-black2.jpg
         medium: /products/galina/galina-black/images/medium-galina-black2.jpg
         thumbnail: /products/galina/galina-black/images/thumbnail-galina-black2.jpg
+title: 'Galina - Black'
 field_product_color:
     -
+        sync_map:
+            image:
+                - field_product_color_image
+        identifier: 'taxonomy_term:1'
+        page: false
+        parents:
+            - 'node:3'
+            - 'commerce_product:1'
+        children: {  }
+        file_path: null
+        jekyll_name: field_product_color
         image: /products/galina/galina-black/images/black.jpg
         entity_id: 'taxonomy_term:1'
         title: Black
