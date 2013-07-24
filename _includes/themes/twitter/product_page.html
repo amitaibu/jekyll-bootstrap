@@ -19,7 +19,7 @@
         {% for sub_page in site.pages %}
           {% if sub_page.entity_id == product %}
             {% for product_color in sub_page.field_product_color %}
-              <li {% if product == page.entity_id %} class="active" {% endif %}><a href="{{BASE_PATH}}{{sub_page.url}}"><img src="{{ product_color.image }}" /></a></li>
+              <li {% if product == page.entity_id %} class="active" {% endif %}><a href="{{BASE_PATH}}{{sub_page.url}}"><img src="{{BASE_PATH}}{{ product_color.image }}" /></a></li>
             {% endfor %}
           {% endif %}
         {% endfor %}
