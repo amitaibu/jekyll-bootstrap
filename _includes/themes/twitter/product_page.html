@@ -13,16 +13,14 @@
   </div>
   <div class="span4">
     <!-- Other variants -->
-    <h3>Other colors</h3>
+    <h3>Colors</h3>
     <ul>
       {% for product in page.field_product %}
-        {% if product != page.entity_id %}
-          {% for sub_page in site.pages %}
-            {% if sub_page.entity_id == product %}
-              <li><a href="{{BASE_PATH}}{{sub_page.url}}">{{ sub_page.title }}</a></li>
-            {% endif %}
-          {% endfor %}
-        {% endif %}
+        {% for sub_page in site.pages %}
+          {% if sub_page.entity_id == product %}
+            <li {% if product != page.entity_id %} class="active" {% endif %}><a href="{{BASE_PATH}}{{sub_page.url}}">{{ sub_page.title }}</a></li>
+          {% endif %}
+        {% endfor %}
       {% endfor %}
     </ul>
 
