@@ -1,0 +1,26 @@
+
+<h4>Checkout</h4>
+
+<table class="table">
+  <tr>
+
+    <th>Name</th>
+    <th>Quantity</th>
+    <th>Price</th>
+    <th>Total</th>
+    <th></th>
+  </tr>
+  <tr ng-repeat="lineItem in cart.lineItems">
+    <td>{{lineItem.name}}</td>
+    <td><input type="number" min="1" ng-model="lineItem.quantity" ng-required class="input-mini"></td>
+    <td>{{ lineItem.price[0].usd }}</td>
+    <td>{{ lineItem.quantity * lineItem.price[0].usd | currency}}</td>
+    <td>
+      <div href ng-click="removeLineItem({key: $index})" class="btn">X</div>
+    </td>
+  </tr>
+  <tr>
+    <strong>Quantity: {{cartService.getQuantity()}}</strong>
+    <strong>Total: {{cartService.getTotal()}}</strong>
+  </tr>
+</table>

@@ -2,7 +2,7 @@
   <h1>{{ page.title }} {% if page.tagline %} <small>{{ page.tagline }}</small>{% endif %}</h1>
 </div>
 
-<div class="row-fluid">
+<div class="row-fluid" ng-app="AngularShoppingCartApp">
   <div class="span8">
     <!-- Variant images -->
     <ul>
@@ -28,4 +28,45 @@
 
     {{ content }}
   </div>
+
+  <!-- Add your site or application content here -->
+  <div class="span12" ng-controller="MainCtrl">
+    <div class="hero-unit">
+
+      <h1>Product page</h1>
+
+      Cart: {{ cart }} <br />
+
+      <add-to-cart product="product" on-add-to-cart="addToCart(lineItem, productInfo)" on-add-to-wait-list="addToWaitList(lineItem, productInfo)"></add-to-cart>
+
+      <div>
+        <h3>Mini cart</h3>
+
+        <mini-cart line-items-count="cart.lineItems"></mini-cart>
+
+        <cart-checkout cart="cart" remove-line-item="removeLineItem(key)"></cart-checkout>
+
+      </div>
+
+
+    </div>
+  </div>
 </div>
+
+
+
+<script src="{{BASE_PATH}}/assets/app/components/angular/angular.js"></script>
+<script src="{{BASE_PATH}}/assets/app/components/angular-resource/angular-resource.js"></script>
+<script src="{{BASE_PATH}}/assets/app/components/angular-cookies/angular-cookies.js"></script>
+<script src="{{BASE_PATH}}/assets/app/components/angular-sanitize/angular-sanitize.js"></script>
+<script src="{{BASE_PATH}}/assets/app/components/angular-local-storage/angular-local-storage.js"></script>
+<script src="{{BASE_PATH}}/assets/app/components/angular-bootstrap/ui-bootstrap.js"></script>
+<script src="{{BASE_PATH}}/assets/app/components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+<!-- build:js scripts/scripts.js -->
+<script src="{{BASE_PATH}}/assets/app/scripts/app.js"></script>
+<script src="{{BASE_PATH}}/assets/app/scripts/controllers/main.js"></script>
+<script src="{{BASE_PATH}}/assets/app/scripts/directives/addToCart.js"></script>
+<script src="{{BASE_PATH}}/assets/app/scripts/services/cartServices.js"></script>
+<script src="{{BASE_PATH}}/assets/app/scripts/services/productServices.js"></script>
+<!-- endbuild -->
