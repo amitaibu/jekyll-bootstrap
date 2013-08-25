@@ -3,7 +3,7 @@
 angular.module('AngularShoppingCartApp')
   .directive('addToCart', function () {
     return {
-      templateUrl: '/assets/app/views/addtocart.html',
+      templateUrl: '/app/views/addtocart.html',
       restrict: 'E',
       scope: {
         "product": '=',
@@ -56,7 +56,7 @@ angular.module('AngularShoppingCartApp')
 angular.module('AngularShoppingCartApp')
   .directive('cartCheckout', function (Cart) {
     return {
-      templateUrl: '/assets/app/views/cart-checkout.html',
+      templateUrl: '/app/views/cart-checkout.html',
       restrict: 'E',
       scope: {
         'cart': '=',

@@ -18,6 +18,7 @@ function MainCtrl($scope, Cart, Product) {
 
   Cart.gettingCart().then(function(data) {
     $scope.cart = Cart.data.cart;
+    console.log(data);
   });
 
   /*
