@@ -4,7 +4,6 @@ title: 'Hello Dekyll'
 file_path: index.md
 
 ---
-
 {% include JB/setup %}
 
 Welcome to Dekyll 0.1!
