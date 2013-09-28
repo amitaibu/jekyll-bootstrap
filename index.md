@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 'Hello Dekyll'
+file_path: index.md
 
 ---
 
