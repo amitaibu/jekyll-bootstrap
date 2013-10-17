@@ -9,6 +9,9 @@ file_path: index.md
 
 Welcome to Dekyll 0.1!
 
+<dekyll-edit build="build" type="node" id="4"></dekyll-edit>
+
+
 Your site is now live on: [http://amitaibu.github.io/jekyll-bootstrap](http://amitaibu.github.io/jekyll-bootstrap)
 
 You can administer it by editing this post, on your local Drupal installation here: [http://localhost/dekyll/www/node/7/edit](http://localhost/dekyll/www/node/7/edit)

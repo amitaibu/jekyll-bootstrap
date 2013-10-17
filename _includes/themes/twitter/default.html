@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="DrupalSocketAngularApp">
   <head>
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
@@ -30,6 +30,25 @@
     <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="Sitewide ATOM Feed">
     <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="Sitewide RSS Feed">
 
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/bower_components/angular/angular.js"></script>
+
+    <!-- build:js scripts/modules.js -->
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/bower_components/angular-sanitize/angular-sanitize.js"></script>
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/bower_components/socket.io-client/dist/socket.io.js"></script>
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/bower_components/angular-socket-io/socket.js"></script>
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <!-- endbuild -->
+
+    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/scripts/app.js"></script>
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/scripts/controllers/main.js"></script>
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/scripts/directives/dekyllEdit.js"></script>
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/scripts/services/Build.js"></script>
+    <script src="{{ BASE_PATH }}/DrupalSocketAngular/app/scripts/directives/dekyllBuild.js"></script>
+    <!-- endbuild -->
+
   </head>
 
   <body>
@@ -48,7 +67,7 @@
 
     <div class="container-narrow">
 
-      <div class="content">
+      <div class="content" ng-controller="MainCtrl">
         {{ content }}
       </div>
       <hr>
